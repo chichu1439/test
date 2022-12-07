@@ -1,0 +1,117 @@
+FP000001|participant inquiry
+FP000002|participant detail inquiry
+FP000003|participant amendment
+FP000004|participant suspension
+FP000005|participant unsuspension
+FP000006|participant creation
+FP000007|participant relation list inquiry
+FP000008|participant agency relation detail inquiry
+FP000009|participant agency relation creation
+FP000010|other participant detail inquiry
+FP000011|rtgs-participant inquiry
+FP000012|settlement account creation
+FP000013|random code creation
+FP000014|verification
+FP000015|settlement account inquiry
+FP000016|settlement account balancead justment
+FP000017|participant agency relation deletion
+FP000018|settlement account detail inquiry
+FP000019|debit credit
+FP000020|alert-balance setting
+FP000021|transaction limit add
+FP000024|ransaction limit update
+FP000025|limit query list
+FP000026|query history
+FP000027|prod fee insert
+FP000029|sweeping update
+FP000030|report file query
+FP000031|monthly report
+FP000035|download file
+FP000036|balance alter noti
+FP000039|history query list
+FP000040|prodfee update
+FP000041|prod fee query
+FP000042|prod fee delete
+FP000043|report log query
+FP000044|participant list
+FP000045|transaction query
+FP000046|participant add
+FP000047|participant update
+FP000048|participant delete
+FP000049|transaction trigger
+FP000050|scenario list
+FP000051|scenario detail
+FP000052|step detail
+FP000053|api query
+FP000055|scenario update
+FP000056|scenario delete
+FP000057|scenario create
+FP000057|step creation
+FP000058|step update
+FP000059|step delete
+FP000060|values creation
+FP000061|values update
+FP000062|values delete
+FP000063|apis chema
+FP000064|aig serviceID
+FP000065|host list
+FP000066|host start
+FP000067|host query
+FP000068|scenario enum query
+FP000070|partclearing query
+FP000071|tcpSending
+FP000072|tcpReceive
+FP000077|alert inquiry
+FP000078|alert balance set
+FP000097|simulato3set message
+FP000098|query redis message
+FP000099|get messages info
+FP000100|aog wait
+FP000102|sample query
+FP000103|param enquiry
+FP000104|netting param update
+FP000105|balance adjustment apply
+FP000106|adjustment update
+FP000107|adjustment delete
+FP000108|adjustment enquiry
+FP000109|adjustment confirm
+FP000110|checker enquiry
+FP000111|result enquiry
+FP000112|payment enum list
+FP000113|payment creat list
+FP000114|history enquiry
+FP010001|20022 credit transfer
+FP010004|payment return
+FP010005|payment summary
+FP010006|credit-transfer detail
+FP010007|message listin quiry
+FP010008|message-detail inquiry
+FP010009|message redeliver
+FP010010|direct-debit detail
+FP010011|payment-return detail
+FP010012|direct debit
+FP010013|sweeping enquiry
+FP010014|payment detail enquiry
+FP010015|20022 account verify v1
+FP010016|8583 lookup and account verify
+FP010017|8583 credit transfer
+FP010018|request to pay
+FP010019|8583request to pay
+FP010020|8583echo check
+FP010021|echo check
+FP010022|20022 sign on
+FP010023|8583sign on
+FP010024|20022sign off
+FP010025|8583sign off
+FP010026|8583credit notification
+FP010027|8583bill-payment
+FP013015|20022 account verify v3
+FP013018|v3 request to pay
+FP013028|adjust mockinfo
+FP020001|addressing register
+FP020002|addressing cancel
+FP020003|addressing amendment
+FP020004|addressing inquiry
+FP020007|execl add
+FP020009|execl list
+FP020010|execl download

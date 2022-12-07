@@ -1,0 +1,1278 @@
+{
+    "$schema": "https://json-schema.org/draft-04/schema#",
+    "id": "urn:iso:std:iso:20022:tech:xsd:pain.014.001.07#",
+    "definitions": {
+        "GenericIdentification30": {
+            "type": "object",
+            "required": [
+                "id",
+                "issr"
+            ],
+            "properties": {
+                "id": {"type": "string"},
+                "issr": {"type": "string"},
+                "schmeNm": {"type": "string"}
+            }
+        },
+        "AddressType3Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"$ref": "#/definitions/AddressType2Code"},
+                "prtry": {"$ref": "#/definitions/GenericIdentification30"}
+            }
+        },
+        "PostalAddress24": {
+            "type": "object",
+            "properties": {
+                "adrTp": {"$ref": "#/definitions/AddressType3Choice"},
+                "dept": {"type": "string"},
+                "subDept": {"type": "string"},
+                "strtNm": {"type": "string"},
+                "bldgNb": {"type": "string"},
+                "bldgNm": {"type": "string"},
+                "flr": {"type": "string"},
+                "pstBx": {"type": "string"},
+                "room": {"type": "string"},
+                "pstCd": {"type": "string"},
+                "twnNm": {"type": "string"},
+                "twnLctnNm": {"type": "string"},
+                "dstrctNm": {"type": "string"},
+                "ctrySubDvsn": {"type": "string"},
+                "ctry": {"type": "string"},
+                "adrLine": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "maxItems": 7,
+                    "minItems": 0
+                }
+            }
+        },
+        "OrganisationIdentificationSchemeName1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "GenericOrganisationIdentification1": {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+                "id": {"type": "string"},
+                "schmeNm": {"$ref": "#/definitions/OrganisationIdentificationSchemeName1Choice"},
+                "issr": {"type": "string"}
+            }
+        },
+        "OrganisationIdentification29": {
+            "type": "object",
+            "properties": {
+                "anyBIC": {"type": "string"},
+                "lei": {"type": "string"},
+                "othr": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/GenericOrganisationIdentification1"},
+                    "minItems": 0
+                }
+            }
+        },
+        "DateAndPlaceOfBirth1": {
+            "type": "object",
+            "required": [
+                "birthDt",
+                "cityOfBirth",
+                "ctryOfBirth"
+            ],
+            "properties": {
+                "birthDt": {"type": "string"},
+                "prvcOfBirth": {"type": "string"},
+                "cityOfBirth": {"type": "string"},
+                "ctryOfBirth": {"type": "string"}
+            }
+        },
+        "PersonIdentificationSchemeName1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "GenericPersonIdentification1": {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+                "id": {"type": "string"},
+                "schmeNm": {"$ref": "#/definitions/PersonIdentificationSchemeName1Choice"},
+                "issr": {"type": "string"}
+            }
+        },
+        "PersonIdentification13": {
+            "type": "object",
+            "properties": {
+                "dtAndPlcOfBirth": {"$ref": "#/definitions/DateAndPlaceOfBirth1"},
+                "othr": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/GenericPersonIdentification1"},
+                    "minItems": 0
+                }
+            }
+        },
+        "Party38Choice": {
+            "type": "object",
+            "required": [
+                "orgId",
+                "prvtId"
+            ],
+            "properties": {
+                "orgId": {"$ref": "#/definitions/OrganisationIdentification29"},
+                "prvtId": {"$ref": "#/definitions/PersonIdentification13"}
+            }
+        },
+        "OtherContact1": {
+            "type": "object",
+            "required": ["chanlTp"],
+            "properties": {
+                "chanlTp": {"type": "string"},
+                "id": {"type": "string"}
+            }
+        },
+        "Contact4": {
+            "type": "object",
+            "properties": {
+                "nmPrfx": {"$ref": "#/definitions/NamePrefix2Code"},
+                "nm": {"type": "string"},
+                "phneNb": {"type": "string"},
+                "mobNb": {"type": "string"},
+                "faxNb": {"type": "string"},
+                "emailAdr": {"type": "string"},
+                "emailPurp": {"type": "string"},
+                "jobTitl": {"type": "string"},
+                "rspnsblty": {"type": "string"},
+                "dept": {"type": "string"},
+                "othr": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/OtherContact1"},
+                    "minItems": 0
+                },
+                "prefrdMtd": {"$ref": "#/definitions/PreferredContactMethod1Code"}
+            }
+        },
+        "PartyIdentification135": {
+            "type": "object",
+            "properties": {
+                "nm": {"type": "string"},
+                "pstlAdr": {"$ref": "#/definitions/PostalAddress24"},
+                "id": {"$ref": "#/definitions/Party38Choice"},
+                "ctryOfRes": {"type": "string"},
+                "ctctDtls": {"$ref": "#/definitions/Contact4"}
+            }
+        },
+        "ClearingSystemIdentification2Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "ClearingSystemMemberIdentification2": {
+            "type": "object",
+            "required": ["mmbId"],
+            "properties": {
+                "clrSysId": {"$ref": "#/definitions/ClearingSystemIdentification2Choice"},
+                "mmbId": {"type": "string"}
+            }
+        },
+        "FinancialIdentificationSchemeName1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "GenericFinancialIdentification1": {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+                "id": {"type": "string"},
+                "schmeNm": {"$ref": "#/definitions/FinancialIdentificationSchemeName1Choice"},
+                "issr": {"type": "string"}
+            }
+        },
+        "FinancialInstitutionIdentification18": {
+            "type": "object",
+            "properties": {
+                "bicfi": {"type": "string"},
+                "clrSysMmbId": {"$ref": "#/definitions/ClearingSystemMemberIdentification2"},
+                "lei": {"type": "string"},
+                "nm": {"type": "string"},
+                "pstlAdr": {"$ref": "#/definitions/PostalAddress24"},
+                "othr": {"$ref": "#/definitions/GenericFinancialIdentification1"}
+            }
+        },
+        "BranchData3": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"},
+                "lei": {"type": "string"},
+                "nm": {"type": "string"},
+                "pstlAdr": {"$ref": "#/definitions/PostalAddress24"}
+            }
+        },
+        "BranchAndFinancialInstitutionIdentification6": {
+            "type": "object",
+            "required": ["finInstnId"],
+            "properties": {
+                "finInstnId": {"$ref": "#/definitions/FinancialInstitutionIdentification18"},
+                "brnchId": {"$ref": "#/definitions/BranchData3"}
+            }
+        },
+        "GroupHeader87": {
+            "type": "object",
+            "required": [
+                "msgId",
+                "creDtTm",
+                "initgPty"
+            ],
+            "properties": {
+                "msgId": {"type": "string"},
+                "creDtTm": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "initgPty": {"$ref": "#/definitions/PartyIdentification135"},
+                "dbtrAgt": {"$ref": "#/definitions/BranchAndFinancialInstitutionIdentification6"},
+                "cdtrAgt": {"$ref": "#/definitions/BranchAndFinancialInstitutionIdentification6"}
+            }
+        },
+        "StatusReason6Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "StatusReasonInformation12": {
+            "type": "object",
+            "properties": {
+                "orgtr": {"$ref": "#/definitions/PartyIdentification135"},
+                "rsn": {"$ref": "#/definitions/StatusReason6Choice"},
+                "addtlInf": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "minItems": 0
+                }
+            }
+        },
+        "NumberOfTransactionsPerStatus5": {
+            "type": "object",
+            "required": [
+                "dtldNbOfTxs",
+                "dtldSts"
+            ],
+            "properties": {
+                "dtldNbOfTxs": {"type": "string"},
+                "dtldSts": {"type": "string"},
+                "dtldCtrlSum": {"type": "number"}
+            }
+        },
+        "OriginalGroupInformation30": {
+            "type": "object",
+            "required": [
+                "orgnlMsgId",
+                "orgnlMsgNmId"
+            ],
+            "properties": {
+                "orgnlMsgId": {"type": "string"},
+                "orgnlMsgNmId": {"type": "string"},
+                "orgnlCreDtTm": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "orgnlNbOfTxs": {"type": "string"},
+                "orgnlCtrlSum": {"type": "number"},
+                "grpSts": {"type": "string"},
+                "stsRsnInf": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/StatusReasonInformation12"},
+                    "minItems": 0
+                },
+                "nbOfTxsPerSts": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/NumberOfTransactionsPerStatus5"},
+                    "minItems": 0
+                }
+            }
+        },
+        "ActiveCurrencyAndAmount": {
+            "type": "object",
+            "required": ["ccy"],
+            "properties": {
+                "value": {"type": "number"},
+                "ccy": {"type": "string"}
+            }
+        },
+        "PaymentConditionStatus1": {
+            "type": "object",
+            "required": [
+                "grntedPmt",
+                "earlyPmt"
+            ],
+            "properties": {
+                "accptdAmt": {"$ref": "#/definitions/ActiveCurrencyAndAmount"},
+                "grntedPmt": {"type": "boolean"},
+                "earlyPmt": {"type": "boolean"}
+            }
+        },
+        "ActiveOrHistoricCurrencyAndAmount": {
+            "type": "object",
+            "required": ["ccy"],
+            "properties": {
+                "value": {"type": "number"},
+                "ccy": {"type": "string"}
+            }
+        },
+        "Charges7": {
+            "type": "object",
+            "required": [
+                "amt",
+                "agt"
+            ],
+            "properties": {
+                "amt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "agt": {"$ref": "#/definitions/BranchAndFinancialInstitutionIdentification6"}
+            }
+        },
+        "EquivalentAmount2": {
+            "type": "object",
+            "required": [
+                "amt",
+                "ccyOfTrf"
+            ],
+            "properties": {
+                "amt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "ccyOfTrf": {"type": "string"}
+            }
+        },
+        "AmountType4Choice": {
+            "type": "object",
+            "required": [
+                "instdAmt",
+                "eqvtAmt"
+            ],
+            "properties": {
+                "instdAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "eqvtAmt": {"$ref": "#/definitions/EquivalentAmount2"}
+            }
+        },
+        "DateAndDateTime2Choice": {
+            "type": "object",
+            "required": [
+                "dt",
+                "dtTm"
+            ],
+            "properties": {
+                "dt": {"type": "string"},
+                "dtTm": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "AmountOrRate1Choice": {
+            "type": "object",
+            "required": [
+                "amt",
+                "rate"
+            ],
+            "properties": {
+                "amt": {"$ref": "#/definitions/ActiveCurrencyAndAmount"},
+                "rate": {"type": "number"}
+            }
+        },
+        "PaymentCondition1": {
+            "type": "object",
+            "required": [
+                "amtModAllwd",
+                "earlyPmtAllwd",
+                "grntedPmtReqd"
+            ],
+            "properties": {
+                "amtModAllwd": {"type": "boolean"},
+                "earlyPmtAllwd": {"type": "boolean"},
+                "delyPnlty": {"type": "string"},
+                "imdtPmtRbt": {"$ref": "#/definitions/AmountOrRate1Choice"},
+                "grntedPmtReqd": {"type": "boolean"}
+            }
+        },
+        "ServiceLevel8Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "LocalInstrument2Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "CategoryPurpose1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "PaymentTypeInformation26": {
+            "type": "object",
+            "properties": {
+                "instrPrty": {"$ref": "#/definitions/Priority2Code"},
+                "svcLvl": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/ServiceLevel8Choice"},
+                    "minItems": 0
+                },
+                "lclInstrm": {"$ref": "#/definitions/LocalInstrument2Choice"},
+                "ctgyPurp": {"$ref": "#/definitions/CategoryPurpose1Choice"}
+            }
+        },
+        "ReferredDocumentType3Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"$ref": "#/definitions/DocumentType6Code"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "ReferredDocumentType4": {
+            "type": "object",
+            "required": ["cdOrPrtry"],
+            "properties": {
+                "cdOrPrtry": {"$ref": "#/definitions/ReferredDocumentType3Choice"},
+                "issr": {"type": "string"}
+            }
+        },
+        "DocumentLineType1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "DocumentLineType1": {
+            "type": "object",
+            "required": ["cdOrPrtry"],
+            "properties": {
+                "cdOrPrtry": {"$ref": "#/definitions/DocumentLineType1Choice"},
+                "issr": {"type": "string"}
+            }
+        },
+        "DocumentLineIdentification1": {
+            "type": "object",
+            "properties": {
+                "tp": {"$ref": "#/definitions/DocumentLineType1"},
+                "nb": {"type": "string"},
+                "rltdDt": {"type": "string"}
+            }
+        },
+        "DiscountAmountType1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "DiscountAmountAndType1": {
+            "type": "object",
+            "required": ["amt"],
+            "properties": {
+                "tp": {"$ref": "#/definitions/DiscountAmountType1Choice"},
+                "amt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"}
+            }
+        },
+        "TaxAmountType1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "TaxAmountAndType1": {
+            "type": "object",
+            "required": ["amt"],
+            "properties": {
+                "tp": {"$ref": "#/definitions/TaxAmountType1Choice"},
+                "amt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"}
+            }
+        },
+        "DocumentAdjustment1": {
+            "type": "object",
+            "required": ["amt"],
+            "properties": {
+                "amt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "cdtDbtInd": {"$ref": "#/definitions/CreditDebitCode"},
+                "rsn": {"type": "string"},
+                "addtlInf": {"type": "string"}
+            }
+        },
+        "RemittanceAmount3": {
+            "type": "object",
+            "properties": {
+                "duePyblAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "dscntApldAmt": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/DiscountAmountAndType1"},
+                    "minItems": 0
+                },
+                "cdtNoteAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "taxAmt": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/TaxAmountAndType1"},
+                    "minItems": 0
+                },
+                "adjstmntAmtAndRsn": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/DocumentAdjustment1"},
+                    "minItems": 0
+                },
+                "rmtdAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"}
+            }
+        },
+        "DocumentLineInformation1": {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+                "id": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/DocumentLineIdentification1"},
+                    "minItems": 1
+                },
+                "desc": {"type": "string"},
+                "amt": {"$ref": "#/definitions/RemittanceAmount3"}
+            }
+        },
+        "ReferredDocumentInformation7": {
+            "type": "object",
+            "properties": {
+                "tp": {"$ref": "#/definitions/ReferredDocumentType4"},
+                "nb": {"type": "string"},
+                "rltdDt": {"type": "string"},
+                "lineDtls": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/DocumentLineInformation1"},
+                    "minItems": 0
+                }
+            }
+        },
+        "RemittanceAmount2": {
+            "type": "object",
+            "properties": {
+                "duePyblAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "dscntApldAmt": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/DiscountAmountAndType1"},
+                    "minItems": 0
+                },
+                "cdtNoteAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "taxAmt": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/TaxAmountAndType1"},
+                    "minItems": 0
+                },
+                "adjstmntAmtAndRsn": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/DocumentAdjustment1"},
+                    "minItems": 0
+                },
+                "rmtdAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"}
+            }
+        },
+        "CreditorReferenceType1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"$ref": "#/definitions/DocumentType3Code"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "CreditorReferenceType2": {
+            "type": "object",
+            "required": ["cdOrPrtry"],
+            "properties": {
+                "cdOrPrtry": {"$ref": "#/definitions/CreditorReferenceType1Choice"},
+                "issr": {"type": "string"}
+            }
+        },
+        "CreditorReferenceInformation2": {
+            "type": "object",
+            "properties": {
+                "tp": {"$ref": "#/definitions/CreditorReferenceType2"},
+                "ref": {"type": "string"}
+            }
+        },
+        "TaxParty1": {
+            "type": "object",
+            "properties": {
+                "taxId": {"type": "string"},
+                "regnId": {"type": "string"},
+                "taxTp": {"type": "string"}
+            }
+        },
+        "TaxAuthorisation1": {
+            "type": "object",
+            "properties": {
+                "titl": {"type": "string"},
+                "nm": {"type": "string"}
+            }
+        },
+        "TaxParty2": {
+            "type": "object",
+            "properties": {
+                "taxId": {"type": "string"},
+                "regnId": {"type": "string"},
+                "taxTp": {"type": "string"},
+                "authstn": {"$ref": "#/definitions/TaxAuthorisation1"}
+            }
+        },
+        "DatePeriod2": {
+            "type": "object",
+            "required": [
+                "frDt",
+                "toDt"
+            ],
+            "properties": {
+                "frDt": {"type": "string"},
+                "toDt": {"type": "string"}
+            }
+        },
+        "TaxPeriod2": {
+            "type": "object",
+            "properties": {
+                "yr": {"type": "string"},
+                "tp": {"$ref": "#/definitions/TaxRecordPeriod1Code"},
+                "frToDt": {"$ref": "#/definitions/DatePeriod2"}
+            }
+        },
+        "TaxRecordDetails2": {
+            "type": "object",
+            "required": ["amt"],
+            "properties": {
+                "prd": {"$ref": "#/definitions/TaxPeriod2"},
+                "amt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"}
+            }
+        },
+        "TaxAmount2": {
+            "type": "object",
+            "properties": {
+                "rate": {"type": "number"},
+                "taxblBaseAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "ttlAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "dtls": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/TaxRecordDetails2"},
+                    "minItems": 0
+                }
+            }
+        },
+        "TaxRecord2": {
+            "type": "object",
+            "properties": {
+                "tp": {"type": "string"},
+                "ctgy": {"type": "string"},
+                "ctgyDtls": {"type": "string"},
+                "dbtrSts": {"type": "string"},
+                "certId": {"type": "string"},
+                "frmsCd": {"type": "string"},
+                "prd": {"$ref": "#/definitions/TaxPeriod2"},
+                "taxAmt": {"$ref": "#/definitions/TaxAmount2"},
+                "addtlInf": {"type": "string"}
+            }
+        },
+        "TaxInformation7": {
+            "type": "object",
+            "properties": {
+                "cdtr": {"$ref": "#/definitions/TaxParty1"},
+                "dbtr": {"$ref": "#/definitions/TaxParty2"},
+                "ultmtDbtr": {"$ref": "#/definitions/TaxParty2"},
+                "admstnZone": {"type": "string"},
+                "refNb": {"type": "string"},
+                "mtd": {"type": "string"},
+                "ttlTaxblBaseAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "ttlTaxAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "dt": {"type": "string"},
+                "seqNb": {"type": "number"},
+                "rcrd": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/TaxRecord2"},
+                    "minItems": 0
+                }
+            }
+        },
+        "GarnishmentType1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "GarnishmentType1": {
+            "type": "object",
+            "required": ["cdOrPrtry"],
+            "properties": {
+                "cdOrPrtry": {"$ref": "#/definitions/GarnishmentType1Choice"},
+                "issr": {"type": "string"}
+            }
+        },
+        "Garnishment3": {
+            "type": "object",
+            "required": ["tp"],
+            "properties": {
+                "tp": {"$ref": "#/definitions/GarnishmentType1"},
+                "grnshee": {"$ref": "#/definitions/PartyIdentification135"},
+                "grnshmtAdmstr": {"$ref": "#/definitions/PartyIdentification135"},
+                "refNb": {"type": "string"},
+                "dt": {"type": "string"},
+                "rmtdAmt": {"$ref": "#/definitions/ActiveOrHistoricCurrencyAndAmount"},
+                "fmlyMdclInsrncInd": {"type": "boolean"},
+                "mplyeeTermntnInd": {"type": "boolean"}
+            }
+        },
+        "StructuredRemittanceInformation16": {
+            "type": "object",
+            "properties": {
+                "rfrdDocInf": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/ReferredDocumentInformation7"},
+                    "minItems": 0
+                },
+                "rfrdDocAmt": {"$ref": "#/definitions/RemittanceAmount2"},
+                "cdtrRefInf": {"$ref": "#/definitions/CreditorReferenceInformation2"},
+                "invcr": {"$ref": "#/definitions/PartyIdentification135"},
+                "invcee": {"$ref": "#/definitions/PartyIdentification135"},
+                "taxRmt": {"$ref": "#/definitions/TaxInformation7"},
+                "grnshmtRmt": {"$ref": "#/definitions/Garnishment3"},
+                "addtlRmtInf": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "maxItems": 3,
+                    "minItems": 0
+                }
+            }
+        },
+        "RemittanceInformation16": {
+            "type": "object",
+            "properties": {
+                "ustrd": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "minItems": 0
+                },
+                "strd": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/StructuredRemittanceInformation16"},
+                    "minItems": 0
+                }
+            }
+        },
+        "GenericIdentification1": {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+                "id": {"type": "string"},
+                "schmeNm": {"type": "string"},
+                "issr": {"type": "string"}
+            }
+        },
+        "DocumentType1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"$ref": "#/definitions/GenericIdentification1"}
+            }
+        },
+        "DocumentFormat1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"$ref": "#/definitions/GenericIdentification1"}
+            }
+        },
+        "SkipPayload": {
+            "type": "object",
+            "required": ["any"],
+            "properties": {
+                "any": {
+                    "allOf": [
+                        {}
+                    ]
+                }
+            }
+        },
+        "PartyAndSignature3": {
+            "type": "object",
+            "required": [
+                "pty",
+                "sgntr"
+            ],
+            "properties": {
+                "pty": {"$ref": "#/definitions/PartyIdentification135"},
+                "sgntr": {"$ref": "#/definitions/SkipPayload"}
+            }
+        },
+        "Document12": {
+            "type": "object",
+            "required": [
+                "tp",
+                "id",
+                "isseDt",
+                "frmt",
+                "nclsr"
+            ],
+            "properties": {
+                "tp": {"$ref": "#/definitions/DocumentType1Choice"},
+                "id": {"type": "string"},
+                "isseDt": {"$ref": "#/definitions/DateAndDateTime2Choice"},
+                "nm": {"type": "string"},
+                "langCd": {"type": "string"},
+                "frmt": {"$ref": "#/definitions/DocumentFormat1Choice"},
+                "fileNm": {"type": "string"},
+                "dgtlSgntr": {"$ref": "#/definitions/PartyAndSignature3"},
+                "nclsr": {
+                    "type": "array",
+                    "items": {"type": "integer"}
+                }
+            }
+        },
+        "AccountSchemeName1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "GenericAccountIdentification1": {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+                "id": {"type": "string"},
+                "schmeNm": {"$ref": "#/definitions/AccountSchemeName1Choice"},
+                "issr": {"type": "string"}
+            }
+        },
+        "AccountIdentification4Choice": {
+            "type": "object",
+            "required": [
+                "iban",
+                "othr"
+            ],
+            "properties": {
+                "iban": {"type": "string"},
+                "othr": {"$ref": "#/definitions/GenericAccountIdentification1"}
+            }
+        },
+        "CashAccountType2Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "ProxyAccountType1Choice": {
+            "type": "object",
+            "required": [
+                "cd",
+                "prtry"
+            ],
+            "properties": {
+                "cd": {"type": "string"},
+                "prtry": {"type": "string"}
+            }
+        },
+        "ProxyAccountIdentification1": {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+                "tp": {"$ref": "#/definitions/ProxyAccountType1Choice"},
+                "id": {"type": "string"}
+            }
+        },
+        "CashAccount38": {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+                "id": {"$ref": "#/definitions/AccountIdentification4Choice"},
+                "tp": {"$ref": "#/definitions/CashAccountType2Choice"},
+                "ccy": {"type": "string"},
+                "nm": {"type": "string"},
+                "prxy": {"$ref": "#/definitions/ProxyAccountIdentification1"}
+            }
+        },
+        "OriginalTransactionReference29": {
+            "type": "object",
+            "required": [
+                "cdtrAgt",
+                "cdtr"
+            ],
+            "properties": {
+                "amt": {"$ref": "#/definitions/AmountType4Choice"},
+                "reqdExctnDt": {"$ref": "#/definitions/DateAndDateTime2Choice"},
+                "xpryDt": {"$ref": "#/definitions/DateAndDateTime2Choice"},
+                "pmtCond": {"$ref": "#/definitions/PaymentCondition1"},
+                "pmtTpInf": {"$ref": "#/definitions/PaymentTypeInformation26"},
+                "pmtMtd": {"$ref": "#/definitions/PaymentMethod4Code"},
+                "rmtInf": {"$ref": "#/definitions/RemittanceInformation16"},
+                "nclsdFile": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/Document12"},
+                    "minItems": 0
+                },
+                "ultmtDbtr": {"$ref": "#/definitions/PartyIdentification135"},
+                "dbtr": {"$ref": "#/definitions/PartyIdentification135"},
+                "dbtrAcct": {"$ref": "#/definitions/CashAccount38"},
+                "dbtrAgt": {"$ref": "#/definitions/BranchAndFinancialInstitutionIdentification6"},
+                "cdtrAgt": {"$ref": "#/definitions/BranchAndFinancialInstitutionIdentification6"},
+                "cdtr": {"$ref": "#/definitions/PartyIdentification135"},
+                "cdtrAcct": {"$ref": "#/definitions/CashAccount38"},
+                "ultmtCdtr": {"$ref": "#/definitions/PartyIdentification135"}
+            }
+        },
+        "SupplementaryDataEnvelope1": {
+            "type": "object",
+            "required": ["any"],
+            "properties": {
+                "any": {"type": "object"}
+            }
+        },
+        "SupplementaryData1": {
+            "type": "object",
+            "required": ["envlp"],
+            "properties": {
+                "plcAndNm": {"type": "string"},
+                "envlp": {"$ref": "#/definitions/SupplementaryDataEnvelope1"}
+            }
+        },
+        "PaymentTransaction104": {
+            "type": "object",
+            "properties": {
+                "stsId": {"type": "string"},
+                "orgnlInstrId": {"type": "string"},
+                "orgnlEndToEndId": {"type": "string"},
+                "orgnlUETR": {"type": "string"},
+                "txSts": {"type": "string"},
+                "stsRsnInf": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/StatusReasonInformation12"},
+                    "minItems": 0
+                },
+                "pmtCondSts": {"$ref": "#/definitions/PaymentConditionStatus1"},
+                "chrgsInf": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/Charges7"},
+                    "minItems": 0
+                },
+                "dbtrDcsnDtTm": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "accptncDtTm": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "acctSvcrRef": {"type": "string"},
+                "clrSysRef": {"type": "string"},
+                "orgnlTxRef": {"$ref": "#/definitions/OriginalTransactionReference29"},
+                "nclsdFile": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/Document12"},
+                    "minItems": 0
+                },
+                "splmtryData": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/SupplementaryData1"},
+                    "minItems": 0
+                }
+            }
+        },
+        "OriginalPaymentInstruction31": {
+            "type": "object",
+            "required": ["orgnlPmtInfId"],
+            "properties": {
+                "orgnlPmtInfId": {"type": "string"},
+                "orgnlNbOfTxs": {"type": "string"},
+                "orgnlCtrlSum": {"type": "number"},
+                "pmtInfSts": {"type": "string"},
+                "stsRsnInf": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/StatusReasonInformation12"},
+                    "minItems": 0
+                },
+                "nbOfTxsPerSts": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/NumberOfTransactionsPerStatus5"},
+                    "minItems": 0
+                },
+                "txInfAndSts": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/PaymentTransaction104"},
+                    "minItems": 0
+                }
+            }
+        },
+        "CreditorPaymentActivationRequestStatusReportV07": {
+            "type": "object",
+            "required": [
+                "grpHdr",
+                "orgnlGrpInfAndSts"
+            ],
+            "properties": {
+                "grpHdr": {"$ref": "#/definitions/GroupHeader87"},
+                "orgnlGrpInfAndSts": {"$ref": "#/definitions/OriginalGroupInformation30"},
+                "orgnlPmtInfAndSts": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/OriginalPaymentInstruction31"},
+                    "minItems": 0
+                },
+                "splmtryData": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/SupplementaryData1"},
+                    "minItems": 0
+                }
+            }
+        },
+        "Document": {
+            "type": "object",
+            "required": ["cdtrPmtActvtnReqStsRpt"],
+            "properties": {
+                "cdtrPmtActvtnReqStsRpt": {"$ref": "#/definitions/CreditorPaymentActivationRequestStatusReportV07"}
+            }
+        },
+        "AddressType2Code": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "ADDR",
+                        "PBOX",
+                        "HOME",
+                        "BIZZ",
+                        "MLTO",
+                        "DLVY"
+                    ]
+                }
+            ]
+        },
+        "NamePrefix2Code": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "DOCT",
+                        "MADM",
+                        "MISS",
+                        "MIST",
+                        "MIKS"
+                    ]
+                }
+            ]
+        },
+        "PreferredContactMethod1Code": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "LETT",
+                        "MAIL",
+                        "PHON",
+                        "FAXX",
+                        "CELL"
+                    ]
+                }
+            ]
+        },
+        "Priority2Code": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "HIGH",
+                        "NORM"
+                    ]
+                }
+            ]
+        },
+        "PaymentMethod4Code": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "CHK",
+                        "TRF",
+                        "DD",
+                        "TRA"
+                    ]
+                }
+            ]
+        },
+        "DocumentType6Code": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "MSIN",
+                        "CNFA",
+                        "DNFA",
+                        "CINV",
+                        "CREN",
+                        "DEBN",
+                        "HIRI",
+                        "SBIN",
+                        "CMCN",
+                        "SOAC",
+                        "DISP",
+                        "BOLD",
+                        "VCHR",
+                        "AROI",
+                        "TSUT",
+                        "PUOR"
+                    ]
+                }
+            ]
+        },
+        "CreditDebitCode": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "CRDT",
+                        "DBIT"
+                    ]
+                }
+            ]
+        },
+        "DocumentType3Code": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "RADM",
+                        "RPIN",
+                        "FXDR",
+                        "DISP",
+                        "PUOR",
+                        "SCOR"
+                    ]
+                }
+            ]
+        },
+        "TaxRecordPeriod1Code": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "MM01",
+                        "MM02",
+                        "MM03",
+                        "MM04",
+                        "MM05",
+                        "MM06",
+                        "MM07",
+                        "MM08",
+                        "MM09",
+                        "MM10",
+                        "MM11",
+                        "MM12",
+                        "QTR1",
+                        "QTR2",
+                        "QTR3",
+                        "QTR4",
+                        "HLF1",
+                        "HLF2"
+                    ]
+                }
+            ]
+        }
+    },
+    "anyOf": [
+        {
+            "type": "object",
+            "properties": {
+                "Document": {"$ref": "#/definitions/Document"}
+            }
+        }
+    ]
+}
