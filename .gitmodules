@@ -1,0 +1,6 @@
+[submodule "load-prepare"]
+	path = load-prepare
+	url = git@github.com:Hanschad/load-prepare.git
+[submodule "test/iso20022"]
+	path = test/iso20022
+	url = git@github.com:yudaprama/iso20022.git
