@@ -7,3 +7,6 @@
 [submodule "test/go-iso20022-pain001"]
 	path = test/go-iso20022-pain001
 	url = git@github.com:72nd/go-iso20022-pain001.git
+[submodule "test/moov-iso20022"]
+	path = test/moov-iso20022
+	url = git@github.com:moov-io/iso20022.git

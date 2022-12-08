@@ -39,6 +39,7 @@ require (
 	github.com/beego/i18n v0.0.0-20161101132742-e9308947f407 // indirect
 	github.com/bndr/gotabulate v1.1.2 // indirect
 	github.com/clbanning/mxj v1.8.4 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db // indirect
