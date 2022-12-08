@@ -2,9 +2,10 @@ package main
 
 import (
 	"sync"
+	"testing"
 )
 
-func main() {
+func TestName(t *testing.T) {
 	var wg sync.WaitGroup
 	c := make(chan struct{}, 5)
 

@@ -91,13 +91,13 @@ func sendBankData(w http.ResponseWriter, req *http.Request) {
 	err = O.Table("t_mock_sl_settlement_flow").Find(&settlementFlows, dao.TSlSettlementFlow{
 		StlmtDate: reqData.Date,
 	})
-	transactions := make([]model.BankTransaction, 0)
+	transactions := make([]models.BankTransaction, 0)
 	for _, info := range settlementFlows {
 		TransDirection := "D"
 		if info.TransDirection == "CR" {
 			TransDirection = "C"
 		}
-		transaction := model.BankTransaction{
+		transaction := models.BankTransaction{
 			TransactionId:     info.TransId,
 			MessageId:         info.TransId,
 			Currency:          info.Currency,
@@ -109,7 +109,7 @@ func sendBankData(w http.ResponseWriter, req *http.Request) {
 		}
 		transactions = append(transactions, transaction)
 	}
-	data := &model.BankTransactionData{
+	data := &models.BankTransactionData{
 		Transaction: transactions,
 	}
 	if len(data.Transaction) > 0 {
