@@ -47,7 +47,8 @@ func main() {
 	var aftsql string
 	var cnt string
 
-	flag.StringVar(&sql, "sql", "data.sql", "Import sql File Name")
+	//flag.StringVar(&sql, "sql", "data.sql", "Import sql File Name")
+	flag.StringVar(&sql, "sql", "MatchReconciliationReport_2022-04-20_005_THB.pdf", "Import sql File Name")
 	flag.StringVar(&aftsql, "aftsql", "data_aft.sql", "Export Sql File Name")
 	flag.StringVar(&cnt, "cnt", "1001", "Number of combined records ")
 	cntInt, _ := strconv.ParseInt(cnt, 10, 64)

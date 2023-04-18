@@ -17,11 +17,14 @@ require (
 	git.multiverse.io/framework/common v0.0.22
 	git.multiverse.io/framework/log v0.0.12
 	github.com/Jeffail/tunny v0.1.4
+	github.com/davecgh/go-spew v1.1.1
 	github.com/dongri/emv-qrcode v0.1.1
+	github.com/figassis/bankiso v0.0.0-20190626081935-71e67baef3d9
 	github.com/go-sql-driver/mysql v1.7.0
 	github.com/google/uuid v1.3.0
 	github.com/ideazxy/iso8583 v0.0.0-20160317060925-d06dcb8f1fc4
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
+	github.com/swaggo/swag v1.8.10
 	github.com/wumansgy/goEncrypt v1.1.0
 	github.com/xormplus/xorm v0.0.0-20210822100304-4e1d4fcc1e67
 	github.com/yudaprama/iso20022 v0.0.0-20200629044733-52689e16a9cf
@@ -39,7 +42,6 @@ require (
 	github.com/beego/i18n v0.0.0-20161101132742-e9308947f407 // indirect
 	github.com/bndr/gotabulate v1.1.2 // indirect
 	github.com/clbanning/mxj v1.8.4 // indirect
-	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db // indirect
@@ -57,8 +59,8 @@ require (
 	go.uber.org/atomic v1.6.0 // indirect
 	go.uber.org/multierr v1.5.0 // indirect
 	go.uber.org/zap v1.16.0 // indirect
+	golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4 // indirect
 	golang.org/x/sys v0.3.0 // indirect
-	golang.org/x/tools v0.1.5 // indirect
 	gopkg.in/flosch/pongo2.v3 v3.0.0-20141028000813-5e81b817a0c4 // indirect
-	gopkg.in/yaml.v2 v2.2.8 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

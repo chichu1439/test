@@ -1,0 +1,16 @@
+package constant
+
+//SUType_ID	SUType_Name
+const (
+	BKBSSU = "BKBSSU"
+	BKCUSU = "BKCUSU"
+	BKLNSU = "BKLNSU"
+	BKLMSU = "BKLMSU"
+	BKACSU = "BKACSU"
+	BKCMSU = "BKCMSU"
+	BKSVSU = "BKSVSU"
+	BKSMSU = "BKSMSU"
+	BKINSU = "BKINSU"
+	BKCPSU = "BKCPSU"
+	BKATSU = "BKATSU"
+)

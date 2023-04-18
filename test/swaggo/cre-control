@@ -1,0 +1,13 @@
+cd controller
+while read line
+do
+ s=`echo $line |awk -F "|" '{print $1}'`
+ v=`echo $line |awk -F "|" '{print $2}'`
+ url=`echo $line |awk -F "|" '{print $3}'`
+ cp Test0001.go $s.go
+ sed -i "" "s@Topic@${s}@g" $s.go
+ sed -i "" "s@desc@${v}@g" $s.go
+ sed -i "" "s@urlpath@${url}@g" $s.go
+ echo $s
+ echo $v
+done < ../list

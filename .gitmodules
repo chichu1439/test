@@ -10,3 +10,25 @@
 [submodule "test/moov-iso20022"]
 	path = test/moov-iso20022
 	url = git@github.com:moov-io/iso20022.git
+
+[submodule "test/bankiso"]
+	path = test/bankiso
+	url = git@github.com:figassis/bankiso.git
+[submodule "test/golang"]
+	path = test/golang
+	url = git@github.com:aceld/golang.git
+[submodule "test/xgen"]
+	path = test/xgen
+	url = git@github.com:xuri/xgen.git
+[submodule "test/isosim"]
+	path = test/isosim
+	url = git@github.com:rkbalgi/isosim.git
+[submodule "test/s3manager"]
+	path = test/s3manager
+	url = git@github.com:cloudlena/s3manager.git
+[submodule "test/hcache"]
+	path = test/hcache
+	url = git@github.com:silenceshell/hcache.git
+[submodule "test/jmeter"]
+	path = test/jmeter
+	url = git@github.com:langpf1/jmeter.git

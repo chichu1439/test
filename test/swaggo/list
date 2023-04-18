@@ -1,0 +1,117 @@
+FP000001|participant inquiry|/v1/nfps/participant-list/inquiry
+FP000002|participant detail inquiry|/v1/nfps/participant-detail/inquiry
+FP000003|participant amendment|/v1/nfps/participant/amendment
+FP000004|participant suspension|/v1/nfps/participant/suspension
+FP000005|participant unsuspension|/v1/nfps/participant/unsuspension
+FP000006|participant creation|/v1/nfps/participant/creation
+FP000007|participant relation list inquiry|/v1/nfps/participant-relation-list/inquiry
+FP000008|participant agency relation detail inquiry|/v1/nfps/participant-agency-relation-detail/inquiry
+FP000009|participant agency relation creation|/v1/nfps/participant-agency-relation/creation
+FP000010|other participant detail inquiry|/v1/nfps/other-participant-detail/inquiry
+FP000011|rtgs-participant inquiry|/v1/nfps/rtgs-participant/inquiry
+FP000012|settlement account creation|/v1/nfps/settlement-account/creation
+FP000013|random code creation|/v1/nfps/random-code/creation
+FP000014|verification|/v1/nfps/random-code/verification
+FP000015|settlement account inquiry|/v1/nfps/settlement-account/inquiry
+FP000016|settlement account balancead justment|/v1/nfps/settlement-account-balance/adjustment
+FP000017|participant agency relation deletion|/v1/nfps/participant-agency-relation/deletion
+FP000018|settlement account detail inquiry|/v1/nfps/settlement-account-detail/inquiry
+FP000019|debit credit|/v1/nfps/participant-balance/debit-credit
+FP000020|alert-balance setting|/v1/nfps/alert-balance/setting
+FP000021|transaction limit add|/v1/nfps/transaction/limit/add
+FP000024|ransaction limit update|/v1/nfps/transaction/limit/update
+FP000025|limit query list|/v1/nfps/transaction/limit/query/list
+FP000026|query history|/v1/nfps/transaction/limit/query/history
+FP000027|prod fee insert|/v1/nfps/prod/fee/insert
+FP000029|sweeping update|/v1/nfps/balance/sweeping/update
+FP000030|report file query|/v1/nfps/report/file/query
+FP000031|monthly report|/v1/nfps/banch/daily/and/monthly/report
+FP000035|download file|/v1/nfps/download/file
+FP000036|balance alter noti|/v1/nfps/balance/alter/noti
+FP000039|history query list|/v1/nfps/prod/fee/history/query/list
+FP000040|prodfee update|/v1/nfps/prod/fee/update
+FP000041|prod fee query|/v1/nfps/prod/fee/query
+FP000042|prod fee delete|/v1/nfps/prod/fee/delete
+FP000043|report log query|/v1/nfps/report/log/query
+FP000044|participant list|/v1/nfps/alert/participant/list
+FP000045|transaction query|/v1/nfps/alert/query
+FP000046|participant add|/v1/nfps/alert/participant/add
+FP000047|participant update|/v1/nfps/alert/participant/update
+FP000048|participant delete|/v1/nfps/alert/participant/delete
+FP000049|transaction trigger|/v1/nfps/alert/trigger
+FP000050|scenario list|/v1/nfps/test/scenario/list
+FP000051|scenario detail|/v1/nfps/test/scenario/detail
+FP000052|step detail|/v1/nfps/test/step/detail
+FP000053|api query|/v1/nfps/test/api/query
+FP000055|scenario update|/v1/nfps/test/scenario/update
+FP000056|scenario delete|/v1/nfps/test/scenario/delete
+FP000057|scenario create|/v1/nfps/test/scenario/create
+FP000057|step creation|/v1/nfps/test/scenario/step/creation
+FP000058|step update|/v1/nfps/test/scenario/step/update
+FP000059|step delete|/v1/nfps/test/scenario/step/delete
+FP000060|values creation|/v1/nfps/test/scenario/fields/values/creation
+FP000061|values update|/v1/nfps/test/scenario/fields/values/update
+FP000062|values delete|/v1/nfps/test/scenario/fields/values/delete
+FP000063|apis chema|/v1/nfps/test/api/schema
+FP000064|aig serviceID|/v1/nfps/test/aig/serviceID
+FP000065|host list|/v1/nfps/test/host/list
+FP000066|host start|/v1/nfps/test/host/start
+FP000067|host query|/v1/nfps/test/host/query
+FP000068|scenario enum query|/v1/nfps/test/scenario/enum/query
+FP000070|partclearing query|/v1/nfps/partclearing/query
+FP000071|tcpSending|/v1/nfps/simulator/tcp/sending
+FP000072|tcpReceive|/v1/nfps/simulator/tcp/receive
+FP000077|alert inquiry|/v2/b2b/nfps/alert/inquiry
+FP000078|alert balance set|/v2/b2b/nfps/alert-balance/setting
+FP000097|simulato3set message|/v1/nfps/test/scenario/simulato3/set/message
+FP000098|query redis message|/v1/nfps/test/scenario/query/redis/message
+FP000099|get messages info|/v1/nfps/test/scenario/simulato1/get/messages/info
+FP000100|aog wait|/v1/nfps/test/scenario/simulato1/aog/wait
+FP000102|sample query|/v1/nfps/report/sample/query
+FP000103|param enquiry|/v1/nfps/netting/param/enquiry
+FP000104|netting param update|/v1/nfps/netting/param/update
+FP000105|balance adjustment apply|/v1/nfps/balance/adjustment/apply
+FP000106|adjustment update|/v1/nfps/balance/adjustment/update
+FP000107|adjustment delete|/v1/nfps/balance/adjustment/delete
+FP000108|adjustment enquiry|/v1/nfps/balance/adjustment/enquiry
+FP000109|adjustment confirm|/v1/nfps/balance/adjustment/confirm
+FP000110|checker enquiry|/v1/nfps/balance/adjustment/checker/enquiry
+FP000111|result enquiry|/v1/nfps/netting/result/enquiry
+FP000112|payment enum list|/v3/nfps/payment/enum/list
+FP000113|payment creat list|/v1/nfps/payment/creat/list
+FP000114|history enquiry|/v1/nfps/balance/adjustment/history/enquiry
+FP010001|20022 credit transfer|/v1/nfps/credit-transfer
+FP010004|payment return|/v1/nfps/payment-return
+FP010005|payment summary|/v1/nfps/payment-summary
+FP010006|credit-transfer detail|/v1/nfps/credit-transfer/detail
+FP010007|message listin quiry|/v1/nfps/message-list/inquiry
+FP010008|message-detail inquiry|/v1/nfps/message-detail/inquiry
+FP010009|message redeliver|/v1/nfps/message/redeliver
+FP010010|direct-debit detail|/v1/nfps/direct-debit/detail
+FP010011|payment-return detail|/v1/nfps/payment-return/detail
+FP010012|direct debit|/v1/nfps/direct-debit
+FP010013|sweeping enquiry|/v1/nfps/balance/sweeping/enquiry
+FP010014|payment detail enquiry|/v1/nfps/payment/detail/enquiry
+FP010015|20022 account verify v1|/v1/nfps/iso20022/lookup
+FP010016|8583 lookup and account verify|/v1/nfps/8583/lookup-and-account-verify
+FP010017|8583 credit transfer|/v1/nfps/8583/credit-transfer
+FP010018|request to pay|/v1/nfps/request/to/pay
+FP010019|8583request to pay|/v1/nfps/8583/request-to-pay
+FP010020|8583echo check|/v1/nfps/8583/echo/check
+FP010021|echo check|/v1/nfps/20022/echo/check
+FP010022|20022 sign on|/v1/nfps/20022/sign/on
+FP010023|8583sign on|/v1/nfps/8583/sign/on
+FP010024|20022sign off|/v1/nfps/20022/sign/off
+FP010025|8583sign off|/v1/nfps/8583/sign/off
+FP010026|8583credit notification|/v1/nfps/8583/credit/notification
+FP010027|8583bill-payment|/v1/nfps/8583/bill-payment
+FP013015|20022 account verify v3|/v3/nfps/iso20022/lookup
+FP013018|v3 request to pay|/v3/nfps/request/to/pay
+FP013028|adjust mockinfo|/v3/nfps/adjust/mockinfo
+FP020001|addressing register|/v1/nfps/addressing/register
+FP020002|addressing cancel|/v1/nfps/addressing/cancel
+FP020003|addressing amendment|/v1/nfps/addressing/amendment
+FP020004|addressing inquiry|/v1/nfps/addressing/inquiry
+FP020007|execl add|/v1/nfps/import/execl/add
+FP020009|execl list|/v1/nfps/import/execl/list
+FP020010|execl download|/v1/nfps/import/execl/download

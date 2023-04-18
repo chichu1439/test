@@ -1,0 +1,54 @@
+basePath: /api
+definitions:
+  web.APIError:
+    description: API error with information about it
+    properties:
+      createdAt:
+        description: Error time
+        type: string
+      error:
+        description: Error an Api error
+        type: string
+      errorCtx:
+        description: Error `context` tick comment
+        type: string
+      errorNo:
+        description: Error `number` tick comment
+        type: integer
+    type: object
+host: localhost:4000
+info:
+  contact: {}
+  description: This is a sample server Petstore server.
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /posts/{post_id}:
+    get:
+      consumes:
+      - application/json
+      description: get string by ID
+      parameters:
+      - description: Some ID
+        format: int64
+        in: path
+        name: post_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: We need ID!!
+          schema:
+            $ref: '#/definitions/web.APIError'
+        "404":
+          description: Can not find ID
+          schema:
+            $ref: '#/definitions/web.APIError'
+      summary: Add a new pet to the store
+swagger: "2.0"
