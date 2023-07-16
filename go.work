@@ -1,0 +1,20 @@
+go 1.20
+
+use (
+	./apitest
+	./apitest/vendor/github.com/360EntSecGroup-Skylar/excelize
+	./apitest/vendor/github.com/astaxie/beego
+	./apitest/vendor/github.com/cespare/xxhash/v2
+	./apitest/vendor/github.com/go-playground/locales
+	./apitest/vendor/github.com/go-playground/universal-translator
+	./apitest/vendor/github.com/go-playground/validator/v10
+	./apitest/vendor/github.com/hashicorp/golang-lru
+	./apitest/vendor/github.com/leodido/go-urn
+	./apitest/vendor/github.com/moov-io/iso8583
+	./apitest/vendor/github.com/prometheus/procfs
+	./apitest/vendor/github.com/shopspring/decimal
+	./apitest/vendor/gopkg.in/yaml.v2
+	./apitest/vendor/gopkg.in/yaml.v3
+	./glssql
+	./test
+)
