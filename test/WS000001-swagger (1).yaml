@@ -1,0 +1,3737 @@
+swagger: "2.0"
+info:
+  description: "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters."
+  version: "1.0.0"
+  title: "Swagger Petstore"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "petstore.swagger.io"
+basePath: "/v2"
+tags:
+schemes:
+- "https"
+- "http"
+paths:
+  /v1/credits/listRelatedProduct:
+    post:
+      tags:
+      - "Common"
+      summary: "Associated products inquiry"
+      description: ""
+      operationId: "/v1/credits/listRelatedProduct"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV004401Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV004401Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV004401Response"
+  /v1/payments/pse/bankList:
+    post:
+      tags:
+      - "Common"
+      summary: "Bank List Query"
+      description: ""
+      operationId: "/v1/payments/pse/bankList"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV002101Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV002101Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV002101Response"
+  /v1/transport/TransportCard/Details:
+    post:
+      tags:
+      - "Common"
+      summary: "Card Query"
+      description: ""
+      operationId: "/v1/transport/TransportCard/Details"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV000201Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV000201Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV000201Response"
+  /v1/account/movements/online:
+    post:
+      tags:
+      - "Common"
+      summary: "Check movements online"
+      description: ""
+      operationId: "/v1/account/movements/online"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV008201Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV008201Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV008201Response"
+  /v1/oauth2/register:
+    post:
+      tags:
+      - "Common"
+      summary: "Client Registration for Oauth2"
+      description: ""
+      operationId: "/v1/oauth2/register"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV000701Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV000701Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV000701Response"
+  /v1/davivienda/collection/inquiry:
+    post:
+      tags:
+      - "Common"
+      summary: "collection payment inquiry"
+      description: ""
+      operationId: "/v1/davivienda/collection/inquiry"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006301Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006301Request"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006301Response"
+  /v1/davivienda/collection/reject:
+    post:
+      tags:
+      - "Common"
+      summary: "collection reject"
+      description: ""
+      operationId: "/v1/davivienda/collection/reject"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006901Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006901Request"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006901Response"
+  /v1/davivienda/collection/request:
+    post:
+      tags:
+      - "Common"
+      summary: "collection request"
+      description: ""
+      operationId: "/v1/davivienda/collection/request"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006401Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006401Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006401Response"
+  /v1/davivienda/collection/reversal:
+    post:
+      tags:
+      - "Common"
+      summary: "collection reversal"
+      description: ""
+      operationId: "/v1/davivienda/collection/reversal"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006501Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006501Request"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006501Response"
+  /v1/payments/subscriptions/activate:
+    post:
+      tags:
+      - "Common"
+      summary: "Confirm Registration"
+      description: ""
+      operationId: "/v1/payments/subscriptions/activate"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV003201Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV003201Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV003201Response"
+  /v1/payments/subscriptions/commerceList:
+    post:
+      tags:
+      - "Common"
+      summary: "Consult customer subscriptions by a consulted partner"
+      description: ""
+      operationId: "/v1/payments/subscriptions/commerceList"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV003701Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV003701Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV003701Response"
+  /Api/BilleteraMovil/ValidarSaldo:
+    post:
+      tags:
+      - "Common"
+      summary: "Consulta Monedero"
+      description: ""
+      operationId: "/Api/BilleteraMovil/ValidarSaldo"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV000301Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV000301Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV000301Response"
+  /v1/operations/registro/customer:
+    post:
+      tags:
+      - "Common"
+      summary: "Create Customer, Wallet, Key BOSS"
+      description: ""
+      operationId: "/v1/operations/registro/customer"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV000501Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV000501Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV000501Response"
+  /v1/credits/InsertLoanSimulation:
+    post:
+      tags:
+      - "Common"
+      summary: "Create simulation"
+      description: ""
+      operationId: "/v1/credits/InsertLoanSimulation"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV004701Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV004701Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV004701Response"
+  /v1/operations/interbank/client:
+    post:
+      tags:
+      - "Common"
+      summary: "Create, Query and Modify customer data"
+      description: ""
+      operationId: "/v1/operations/interbank/client"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV002201Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV002201Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV002201Response"
+  /v1/credits/createNanoCredit:
+    post:
+      tags:
+      - "Common"
+      summary: "Creation and disbursement of usage"
+      description: ""
+      operationId: "/v1/credits/createNanoCredit"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV004801Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV004801Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV004801Response"
+  /v1/credits/createCreditQuota:
+    post:
+      tags:
+      - "Common"
+      summary: "Credit Quota Creation"
+      description: ""
+      operationId: "/v1/credits/createCreditQuota"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV004501Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV004501Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV004501Response"
+  /v1/credits/creditQuotaMovements:
+    post:
+      tags:
+      - "Common"
+      summary: "Credit Quota Movements Query"
+      description: ""
+      operationId: "/v1/credits/creditQuotaMovements"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV004201Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV004201Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV004201Response"
+  /v1/credits/massiveSelectLoanBalance:
+    post:
+      tags:
+      - "Common"
+      summary: "Customer credit inquiry"
+      description: ""
+      operationId: "/v1/credits/massiveSelectLoanBalance"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV004601Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV004601Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV004601Response"
+  /v1/customers/singleSelect:
+    post:
+      tags:
+      - "Common"
+      summary: "Daviplata risk assessment"
+      description: ""
+      operationId: "/v1/customers/singleSelect"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV004101Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV004101Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV004101Response"
+  /v1/payments/subscriptions/cancel:
+    post:
+      tags:
+      - "Common"
+      summary: "Deactivate ClientxPartner Linking"
+      description: ""
+      operationId: "/v1/payments/subscriptions/cancel"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV003301Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV003301Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV003301Response"
+  /v1/davivienda/deposit:
+    post:
+      tags:
+      - "Common"
+      summary: "deposit"
+      description: ""
+      operationId: "/v1/davivienda/deposit"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006101Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006101Request"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006101Response"
+  /v1/davivienda/deposit/reject:
+    post:
+      tags:
+      - "Common"
+      summary: "deposit reject"
+      description: ""
+      operationId: "/v1/davivienda/deposit/reject"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006801Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006801Request"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006801Response"
+  /v1/davivienda/deposit/reversal:
+    post:
+      tags:
+      - "Common"
+      summary: "deposit reversal"
+      description: ""
+      operationId: "/v1/davivienda/deposit/reversal"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006201Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006201Request"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006201Response"
+  /v1/oauth2/token:
+    post:
+      tags:
+      - "Common"
+      summary: "Generate Token for Oauth2"
+      description: ""
+      operationId: "/v1/oauth2/token"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV000801Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV000801Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV000801Response"
+  /v1/payments/subscriptions/payment:
+    post:
+      tags:
+      - "Common"
+      summary: "Generates payment to the wallet"
+      description: ""
+      operationId: "/v1/payments/subscriptions/payment"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV003401Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV003401Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV003401Response"
+  /v1/account/statements/list:
+    post:
+      tags:
+      - "Common"
+      summary: "get statement date"
+      description: ""
+      operationId: "/v1/account/statements/list"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV008401Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV008401Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV008401Response"
+  /account/statements/byMonth:
+    post:
+      tags:
+      - "Common"
+      summary: "get user statement"
+      description: ""
+      operationId: "/account/statements/byMonth"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV008301Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV008301Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV008301Response"
+  /v1/davivienda/keyexchange/keychange:
+    post:
+      tags:
+      - "Common"
+      summary: "keychange"
+      description: ""
+      operationId: "/v1/davivienda/keyexchange/keychange"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006702Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006702Request"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006702Response"
+  /v1/davivienda/keyexchange/newkey:
+    post:
+      tags:
+      - "Common"
+      summary: "keyexchange"
+      description: ""
+      operationId: "/v1/davivienda/keyexchange/newkey"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006701Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006701Request"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006701Response"
+  /v1/payments/paymentproviderlist:
+    post:
+      tags:
+      - "Common"
+      summary: "List Providers"
+      description: ""
+      operationId: "/v1/payments/paymentproviderlist"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV003601Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV003601Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV003601Response"
+  /v1/operations/registro/listRestrectiveQuery:
+    post:
+      tags:
+      - "Common"
+      summary: "List Validation"
+      description: ""
+      operationId: "/v1/operations/registro/listRestrectiveQuery"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV000401Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV000401Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV000401Response"
+  /v1/notifications/operational/message:
+    post:
+      tags:
+      - "Common"
+      summary: "Logging in DataLake"
+      description: ""
+      operationId: "/v1/notifications/operational/message"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV000601Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV000601Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV000601Response"
+  /v1/davivienda/logon/logoff/echotest:
+    post:
+      tags:
+      - "Common"
+      summary: "logoff echotest"
+      description: ""
+      operationId: "/v1/davivienda/logon/logoff/echotest"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006601Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006601Request"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006601Response"
+  /v1/davivienda/echotest/test:
+    post:
+      tags:
+      - "Common"
+      summary: "Logon,Logoff,Echotets"
+      description: ""
+      operationId: "/v1/davivienda/echotest/test"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006601Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006601Request"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006601Response"
+  /v1/davivienda/ownProductsPayment/Reject:
+    post:
+      tags:
+      - "Common"
+      summary: "Own Product Payment Error/ Reject"
+      description: ""
+      operationId: "/v1/davivienda/ownProductsPayment/Reject"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006C01Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006C01Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006C01Response"
+  /v1/davivienda/ownProductsPayment/Reversal:
+    post:
+      tags:
+      - "Common"
+      summary: "Own Product Reversal"
+      description: ""
+      operationId: "/v1/davivienda/ownProductsPayment/Reversal"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006B01Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006B01Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006B01Response"
+  /v1/davivienda/ownProductsPayment:
+    post:
+      tags:
+      - "Common"
+      summary: "Own Products Payment Transaction"
+      description: ""
+      operationId: "/v1/davivienda/ownProductsPayment"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006A01Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006A01Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006A01Response"
+  /v1/payments/subscriptions/request:
+    post:
+      tags:
+      - "Common"
+      summary: "Partnership application Subscription"
+      description: ""
+      operationId: "/v1/payments/subscriptions/request"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV003101Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV003101Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV003101Response"
+  /v1/payments/checkout/payment:
+    post:
+      tags:
+      - "Common"
+      summary: "payment"
+      description: ""
+      operationId: "/v1/payments/checkout/payment"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV007401Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV007401Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV007401Response"
+  /v1/payments/checkout/paymentLink/generate/unencryption:
+    post:
+      tags:
+      - "Common"
+      summary: "Payment Link Generate"
+      description: ""
+      operationId: "/v1/payments/checkout/paymentLink/generate/unencryption"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV007201Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV007201Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV007201Response"
+  /v1/risk/evaluationCustomer:
+    post:
+      tags:
+      - "Monitor"
+      summary: "Query customer risk"
+      description: ""
+      operationId: "/v1/risk/evaluationCustomer"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV005101Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV005101Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV005101Response"
+  /v1/risk/evaluationQuery:
+    post:
+      tags:
+      - "Monitor"
+      summary: "Query customer risk evaluation"
+      description: ""
+      operationId: "/v1/risk/evaluationQuery"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV005301Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV005301Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV005301Response"
+  /v1/account/movements:
+    post:
+      tags:
+      - "Common"
+      summary: "Query Movement"
+      description: ""
+      operationId: "/v1/account/movements"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV008101Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV008101Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV008101Response"
+  /v1/payments/pse/putmoney/status:
+    post:
+      tags:
+      - "Common"
+      summary: "Query Putmoney status in persistence"
+      description: ""
+      operationId: "/v1/payments/pse/putmoney/status"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV002501Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV002501Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV002501Response"
+  /v1/transport/TransportCard/Recharge:
+    post:
+      tags:
+      - "Common"
+      summary: "Recharge"
+      description: ""
+      operationId: "/v1/transport/TransportCard/Recharge"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV000101Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV000101Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV000101Response"
+  /v1/payments/pse/putmoney:
+    post:
+      tags:
+      - "Common"
+      summary: "Recharge Wallet"
+      description: ""
+      operationId: "/v1/payments/pse/putmoney"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV002401Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV002401Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV002401Response"
+  /v1/security/twoFactorAuthentication/otp/generate:
+    post:
+      tags:
+      - "Common"
+      summary: "Request OTP"
+      description: ""
+      operationId: "/v1/security/twoFactorAuthentication/otp/generate"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV001101Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV001101Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV001101Response"
+  /v1/credits/nanocreditBalance:
+    post:
+      tags:
+      - "Common"
+      summary: "Revolving Credit Balance Inquiries"
+      description: ""
+      operationId: "/v1/credits/nanocreditBalance"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV004301Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV004301Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV004301Response"
+  /v1/risk/evaluationAdd:
+    post:
+      tags:
+      - "Monitor"
+      summary: "Save customer risk evaluation"
+      description: ""
+      operationId: "/v1/risk/evaluationAdd"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV005201Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV005201Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV005201Response"
+  /v1/8583/tcp/receive:
+    post:
+      tags:
+      - "Common"
+      summary: "tcp receive"
+      description: ""
+      operationId: "/v1/8583/tcp/receive"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006601Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006601Request"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006601Response"
+  /v1/payments/paymentprovider:
+    post:
+      tags:
+      - "Common"
+      summary: "TPP Partner Management"
+      description: ""
+      operationId: "/v1/payments/paymentprovider"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV003501Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV003501Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV003501Response"
+  /v1/payments/checkout/paymentProvider:
+    post:
+      tags:
+      - "Common"
+      summary: "tppPartner  management"
+      description: ""
+      operationId: "/v1/payments/checkout/paymentProvider"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV007101Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV007101Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV007101Response"
+  /v1/security/twoFactorAuthentication/otp/validate:
+    post:
+      tags:
+      - "Common"
+      summary: "Verify OTP"
+      description: ""
+      operationId: "/v1/security/twoFactorAuthentication/otp/validate"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV001201Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV001201Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV001201Response"
+  /v1/payments/checkout/payment/verify:
+    post:
+      tags:
+      - "Common"
+      summary: "Verify URL and send OTP"
+      description: ""
+      operationId: "/v1/payments/checkout/payment/verify"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV007301Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV007301Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV007301Response"
+  /v1/payments/pse/putmoney/verify:
+    post:
+      tags:
+      - "Common"
+      summary: "Wallet Validation"
+      description: ""
+      operationId: "/v1/payments/pse/putmoney/verify"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV002301Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV002301Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV002301Response"
+  /v1/davivienda/withdrawal/reject:
+    post:
+      tags:
+      - "Common"
+      summary: "Withdrawal and CashOut Reject"
+      description: ""
+      operationId: "/v1/davivienda/withdrawal/reject"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006F01Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006F01Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006F01Response"
+  /v1/davivienda/withdrawal/reversal:
+    post:
+      tags:
+      - "Common"
+      summary: "Withdrawal and CashOut Reversal"
+      description: ""
+      operationId: "/v1/davivienda/withdrawal/reversal"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006E01Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006E01Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006E01Response"
+  /v1/davivienda/withdrawal:
+    post:
+      tags:
+      - "Common"
+      summary: "Withdrawal and CashOut Transaction"
+      description: ""
+      operationId: "/v1/davivienda/withdrawal"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "DV006D01Request"
+        required: true
+        schema:
+          $ref: "#/definitions/DV006D01Request"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-transaction-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-app-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-session-id"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      - name: "x-country"
+        in: "header"
+        required: true
+        type: "INT"
+      - name: "aes_key"
+        in: "header"
+        required: true
+        type: "VARCHAR"
+      responses:
+        "Response Body":
+          description: "Response Body"
+        schema:
+          $ref: "#/definitions/DV006D01Response"
+securityDefinitions:
+  petstore_auth:
+    type: "oauth2"
+    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
+    flow: "implicit"
+    scopes:
+      write:pets: "modify pets in your account"
+      read:pets: "read your pets"
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+definitions:
+  DV000101Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/Consumer01"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader02"
+      transactionDetail:
+          $ref: "#/definitions/BOS01TransactionDetail"
+  DV000101Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS33ResultStatus"
+      resultDetail:
+          $ref: "#/definitions/ResultDetail"
+  DV000201Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader02"
+      transactionDetail:
+          $ref: "#/definitions/BOS02TransactionDetail"
+  DV000201Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS25ResultStatus"
+      resultDetail:
+          $ref: "#/definitions/ResultDetail02"
+  DV000301Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS03TransactionDetail"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+  DV000301Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS03ResultStatus"
+  DV000401Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS04TransactionDetail"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+  DV000401Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS03ResultStatus"
+      birthDate:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      ciiuCode:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      departamentoCode:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      documentExpeditionDate:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      documentExpeditionPlace:
+        type: "INT"
+        format: "INT"
+      email:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      firstName:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      identificationNumber:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      identificationType:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      lastName:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      municipioCode:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      nextStateCode:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      phoneCountryCode:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      phoneNumber:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      secondLastName:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      secondName:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      sex:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      titularName:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      nameInformativeList:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV000501Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS05TransactionDetail"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+  DV000501Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS03ResultStatus"
+  DV000601Request:
+    type: "object"
+    properties:
+      originTraceId:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      consumer:
+          $ref: "#/definitions/Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      transactionDetail:
+          $ref: "#/definitions/BOS06TransactionDetail"
+  DV000601Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/RespResultStatus"
+  DV000701Request:
+    type: "object"
+    properties:
+      jwks:
+          $ref: "#/definitions/JSONWebKey"
+      token_endpoint_auth_method:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      token_endpoint_auth_signing_alg:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      grant_types:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV000701Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS07ResultStatus"
+  DV000801Request:
+    type: "object"
+    properties:
+      generate_type:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      grant_type:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      client_id:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      client_secret:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      client_assertion_type:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      client_assertion:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV000801Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS08ResultStatus"
+  DV001101Request:
+    type: "object"
+    properties:
+      summary:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      value:
+          $ref: "#/definitions/Value"
+  DV001101Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS11ResultStatus"
+      infoOtp:
+          $ref: "#/definitions/OTPInfo"
+  DV001201Request:
+    type: "object"
+    properties:
+      summary:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      value:
+          $ref: "#/definitions/"
+  DV001201Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS12ResultStatus"
+  DV002101Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/BOS21Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+  DV002101Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS2ResultStatus"
+      infoBanks:
+          $ref: "#/definitions/PseBankList"
+  DV002201Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      transactionDetail:
+          $ref: "#/definitions/BOS22TransactionDetail"
+  DV002201Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS2ResultStatus"
+      InterBankClient:
+          $ref: "#/definitions/InterbankClient"
+      InterBankPSEData:
+          $ref: "#/definitions/InterBankPSEData"
+  DV002301Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      consumer:
+          $ref: "#/definitions/BOS32Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS2324TransactionDetail"
+  DV002301Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS2ResultStatus"
+      RuleValidations:
+          $ref: "#/definitions/RuleValidations"
+  DV002401Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      transactionDetail:
+          $ref: "#/definitions/BOS2324TransactionDetail"
+      consumer:
+          $ref: "#/definitions/BOS34Consumer"
+  DV002401Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS2ResultStatus"
+      PSEData:
+          $ref: "#/definitions/PSEDataResp"
+      Amount:
+          $ref: "#/definitions/AmountResp"
+      paymentDescription:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      RuleValidations:
+          $ref: "#/definitions/RuleValidations"
+      ticketId:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV002501Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/"
+      transactionHeader:
+          $ref: "#/definitions/"
+      transactionDetail:
+          $ref: "#/definitions/"
+  DV002501Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS25ResultStatus"
+      Amount:
+          $ref: "#/definitions/Amount"
+      PSEData:
+          $ref: "#/definitions/BOS25PSEData"
+      paymentDescription:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      ticketId:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV003101Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/BOS3Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      transactionDetail:
+          $ref: "#/definitions/BOS3TransactionDetail"
+  DV003101Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS2ResultStatus"
+      infoOtp:
+          $ref: "#/definitions/BOS3InfoOtp"
+  DV003201Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/"
+      transactionHeader:
+          $ref: "#/definitions/"
+      transactionDetail:
+          $ref: "#/definitions/"
+  DV003201Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS5ResultStatus"
+      Subscription:
+          $ref: "#/definitions/BOS32Subscription"
+  DV003301Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/BOS21Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      transactionDetail:
+          $ref: "#/definitions/BOS33TransactionDetail"
+  DV003301Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS33ResultStatus"
+  DV003401Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/"
+      transactionHeader:
+          $ref: "#/definitions/"
+      transactionDetail:
+          $ref: "#/definitions/"
+  DV003401Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS33ResultStatus"
+  DV003501Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/BOS21Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      transactionDetail:
+          $ref: "#/definitions/BOS35TransactionDetail"
+  DV003501Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS2ResultStatus"
+      TppPartner:
+          $ref: "#/definitions/BOS35TppPartner"
+      RecurrentPay:
+          $ref: "#/definitions/BOS3RecurrentPay"
+  DV003601Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/BOS21Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      transactionDetail:
+          $ref: "#/definitions/BOS36TransactionDetail"
+  DV003601Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS2ResultStatus"
+      TppPartners:
+          $ref: "#/definitions/BOS36TppPartners"
+  DV003701Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/BOS32Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      transactionDetail:
+          $ref: "#/definitions/BOS36TransactionDetail"
+  DV003701Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/"
+      Subscriptions:
+          $ref: "#/definitions/"
+  DV004101Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      consumer:
+          $ref: "#/definitions/BOS5Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS4184transactionDetail"
+  DV004101Response:
+    type: "object"
+    properties:
+      personalInformation:
+          $ref: "#/definitions/"
+      employmentInformation:
+          $ref: "#/definitions/"
+      financialInformation:
+          $ref: "#/definitions/"
+      fatca:
+          $ref: "#/definitions/"
+      peps:
+          $ref: "#/definitions/"
+      crs:
+          $ref: "#/definitions/"
+      clauses:
+          $ref: "#/definitions/"
+      linkage:
+          $ref: "#/definitions/"
+      resultStatus:
+          $ref: "#/definitions/"
+  DV004201Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/"
+      transactionHeader:
+          $ref: "#/definitions/"
+      transactionDetail:
+          $ref: "#/definitions/"
+  DV004201Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/"
+      creditQuota:
+          $ref: "#/definitions/"
+      companyId:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      productCode:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      subProductCode:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      operationNumber:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      productShortDesc:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      subProductShortDesc:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      movements:
+          $ref: "#/definitions/"
+  DV004301Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/"
+      consumer:
+          $ref: "#/definitions/"
+      transactionDetail:
+          $ref: "#/definitions/"
+  DV004301Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/"
+      credit:
+          $ref: "#/definitions/"
+      amount:
+          $ref: "#/definitions/"
+      contactData:
+          $ref: "#/definitions/"
+  DV004401Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      consumer:
+          $ref: "#/definitions/BOS5Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS44TransactionDetail"
+  DV004401Response:
+    type: "object"
+    properties:
+      Credit:
+          $ref: "#/definitions/CreditRes"
+      resultStatus:
+          $ref: "#/definitions/BOS25ResultStatus"
+  DV004501Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      consumer:
+          $ref: "#/definitions/BOS5Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS45TransactionDetail"
+  DV004501Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS25ResultStatus"
+      creditQuota:
+          $ref: "#/definitions/Sdv0004501ResponseCreditQuota"
+  DV004601Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      consumer:
+          $ref: "#/definitions/BOS5Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS46TransactionDetail"
+  DV004601Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS25ResultStatus"
+      responseParameters:
+          $ref: "#/definitions/ResponseParameters46"
+  DV004701Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      consumer:
+          $ref: "#/definitions/BOS5Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS47TransactionDetail"
+  DV004701Response:
+    type: "object"
+    properties:
+      ProcessSimulation:
+          $ref: "#/definitions/ProcessSimulation"
+      resultStatus:
+          $ref: "#/definitions/BOS25ResultStatus"
+  DV004801Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      consumer:
+          $ref: "#/definitions/BOS5Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS48TransactionDetail"
+  DV004801Response:
+    type: "object"
+    properties:
+      simulate:
+          $ref: "#/definitions/Simulate"
+      credit:
+          $ref: "#/definitions/CreditRp"
+      resultStatus:
+          $ref: "#/definitions/BOS25ResultStatus"
+      transaction:
+          $ref: "#/definitions/Sdv0004801ResponseTransaction"
+  DV005101Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/"
+      transactionHeader:
+          $ref: "#/definitions/"
+      transactionDetail:
+          $ref: "#/definitions/"
+  DV005101Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/"
+      ResponseParameters:
+          $ref: "#/definitions/"
+  DV005201Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/"
+      transactionHeader:
+          $ref: "#/definitions/"
+      transactionDetail:
+          $ref: "#/definitions/"
+  DV005201Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS5ResultStatus"
+      responseParameters:
+          $ref: "#/definitions/BOS52ResponseParameters"
+  DV005301Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/BOS5Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      transactionDetail:
+          $ref: "#/definitions/BOS53TransactionDetail"
+  DV005301Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/BOS5ResultStatus"
+      responseParameters:
+          $ref: "#/definitions/BOS53ResponseParameters"
+  DV006101Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006101Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006201Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006201Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006301Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006301Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006401Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006401Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006501Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006501Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006601Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006601Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006701Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006701Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006702Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006702Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006801Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006801Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006901Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006901Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006A01Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006A01Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006B01Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006B01Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006C01Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006C01Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006D01Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006D01Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006E01Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006E01Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006F01Request:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV006F01Response:
+    type: "object"
+    properties:
+      header:
+        type: "VARCHAR"
+        format: "VARCHAR"
+      data:
+        type: "VARCHAR"
+        format: "VARCHAR"
+  DV007101Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/"
+      transactionHeader:
+          $ref: "#/definitions/"
+      transactionDetail:
+          $ref: "#/definitions/"
+  DV007101Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/RespResultStatus"
+      TppPartner:
+          $ref: "#/definitions/ResponseTppPartner"
+      WebcheckoutPay:
+          $ref: "#/definitions/BOS71WebcheckoutPay"
+  DV007201Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/BOS5Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      transactionDetail:
+          $ref: "#/definitions/BOS72TransactionDetail"
+  DV007201Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/RespResultStatus"
+      PaymentUrlCommerce:
+          $ref: "#/definitions/PaymentUrlCommerceResponse"
+  DV007301Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/BOS73Consumer"
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      transactionDetail:
+          $ref: "#/definitions/BOS73TransactionDetail"
+  DV007301Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/"
+      InfoOtp:
+          $ref: "#/definitions/"
+      tppPartner:
+          $ref: "#/definitions/"
+  DV007401Request:
+    type: "object"
+    properties:
+      consumer:
+          $ref: "#/definitions/"
+      transactionHeader:
+          $ref: "#/definitions/"
+      transactionDetail:
+          $ref: "#/definitions/"
+  DV007401Response:
+    type: "object"
+    properties:
+      resultStatus:
+          $ref: "#/definitions/"
+      tppPartner:
+          $ref: "#/definitions/"
+  DV008101Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      consumer:
+          $ref: "#/definitions/BOS81Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS81TransactionDetail"
+  DV008101Response:
+    type: "object"
+    properties:
+      totalRecordCount:
+        type: "INT"
+        format: "INT"
+      pageNo:
+        type: "INT"
+        format: "INT"
+      totalPage:
+        type: "INT"
+        format: "INT"
+      resultStatus:
+          $ref: "#/definitions/RespResultStatus"
+      Movements:
+          $ref: "#/definitions/Movements81"
+  DV008201Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      consumer:
+          $ref: "#/definitions/BOS5Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS82TransactionDetail"
+  DV008201Response:
+    type: "object"
+    properties:
+      movements:
+          $ref: "#/definitions/Movements"
+      resultStatus:
+          $ref: "#/definitions/BOS25ResultStatus"
+  DV008301Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      consumer:
+          $ref: "#/definitions/BOS5Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS83TransactionDetail"
+  DV008301Response:
+    type: "object"
+    properties:
+      AccountStatement:
+          $ref: "#/definitions/AccountStatementResponse"
+      resultStatus:
+          $ref: "#/definitions/RespResultStatus"
+  DV008401Request:
+    type: "object"
+    properties:
+      transactionHeader:
+          $ref: "#/definitions/TransactionHeader"
+      consumer:
+          $ref: "#/definitions/BOS84Consumer"
+      transactionDetail:
+          $ref: "#/definitions/BOS4184transactionDetail"
+  DV008401Response:
+    type: "object"
+    properties:
+      ListAccountStatement:
+          $ref: "#/definitions/ListAccountStatement"
+      resultStatus:
+          $ref: "#/definitions/RespResultStatus"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
